@@ -1,14 +1,13 @@
 from virtual_memory import VirtualMemory
 
 def main():
-    page_size = 4096
-    num_pages = 16
-    num_frames = 4  
-    tlb_capacity = 4 
+    program_address_space = 16 # Number of bits in the address space
+    page_size = 256 # Size of a page in bytes
+    num_pages = 16 # Number of pages in virtual memory
+    num_frames = 256 # Number of frames in physical memory
+    tlb_capacity = 16 # Number of entries in the TLB
 
-    virtual_memory = VirtualMemory(page_size, num_pages, num_frames, tlb_capacity)
-
-    print("Hello World!")
+    virtual_memory = VirtualMemory(program_address_space, page_size, num_pages, num_frames, tlb_capacity)
 
 if __name__ == "__main__":
     main()
