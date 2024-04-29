@@ -21,7 +21,7 @@ class VirtualMemory:
         page_num = virtual_address_binary[:page_num_bits+1]
 
         offset_bits = self.program_address_space - page_num_bits
-        page_offset = virtual_address_binary[offset_bits+1:]
+        page_offset = virtual_address_binary[offset_bits:]
 
         frame_num = self.tlb.access(page_num)
 
