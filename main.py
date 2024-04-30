@@ -9,5 +9,7 @@ def main():
 
     virtual_memory = VirtualMemory(program_address_space, page_size, num_pages, num_frames, tlb_capacity)
 
+    virtual_memory.translate_address_from_file('addresses.txt')
+
 if __name__ == "__main__":
     main()
