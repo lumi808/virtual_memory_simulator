@@ -91,6 +91,11 @@ class VirtualMemory:
         return self.tlb.hit_rate()
     
     def log_system_info(self):
+        self.logs.append(f"Program addres space: {self.program_address_space}")
+        self.logs.append(f"Page size: {self.page_size}")
+        self.logs.append(f"Number of pages: {self.num_pages}")
+        self.logs.append(f"Number of frames: {self.num_frames}")
+        self.logs.append(f"TLB size: {self.tlb_size}")
         self.logs.append(f"Page fault rate: {self.page_fault_rate()}%")
         self.logs.append(f"TLB hit rate: {self.tlb_hit_rate()}%")
 
